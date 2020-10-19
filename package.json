@@ -1,0 +1,93 @@
+{
+  "name": "prefill",
+  "version": "0.0.0",
+  "description": "",
+  "license": "Unlicense",
+  "homepage": "",
+  "repository": "https://github.com/dk00/prefill",
+  "bugs": "https://github.com/dk00/prefill/issues",
+  "keywords": [],
+  "author": "Derek Shih <dk@csie.org> (https://github.com/dk00)",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "lint": "prettier-eslint",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "prettier-eslint"
+  },
+  "babel": {
+    "presets": [
+      "@babel/modules"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb"
+    ],
+    "parser": "@babel/eslint-parser",
+    "plugins": [
+      "@babel"
+    ],
+    "rules": {
+      "no-console": [
+        "warn"
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "dist"
+  ],
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true
+  },
+  "jest": {},
+  "dependencies": {
+    "@babel/runtime": "^7.12.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.1",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "eslint": "^7.2.0",
+    "husky": "^4.3.0",
+    "jest": "^26.5.3",
+    "jest-pnp-resolver": "^1.2.2",
+    "lint-staged": "^10.4.1",
+    "prettier": "^2.1.2",
+    "react": "^16.13.1",
+    "rollup": "^2.31.0",
+    "rollup-plugin-pnp-resolve": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0"
+  },
+  "installConfig": {
+    "pnp": true
+  }
+}
