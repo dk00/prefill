@@ -80,14 +80,12 @@
     "jest-pnp-resolver": "^1.2.2",
     "lint-staged": "^10.4.1",
     "prettier": "^2.1.2",
+    "prettier-eslint-cli": "^5.0.0",
     "react": "^16.13.1",
     "rollup": "^2.31.0",
     "rollup-plugin-pnp-resolve": "^2.0.0"
   },
   "peerDependencies": {
     "react": ">= 16.8.0"
-  },
-  "installConfig": {
-    "pnp": true
   }
 }
